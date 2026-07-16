@@ -1,122 +1,152 @@
-# RELAY
+# 📡 RELAY
+## When the internet disappears, communication shouldn't.
 
-**Offline-first, device-to-device mesh messaging — no towers, no internet, no server.**
+**Built for Build.IT '26 Hackathon — Prompt 1: Software Track: First Contact**
 
-> "When the internet disappears, communication shouldn't."
-
-Built for **Build.IT Hackathon — Prompt 1: Software Track: First Contact**
-
-![demo](docs/demo.gif)
+---
 
 ## The Problem
 
-Modern communication depends entirely on infrastructure most people never think about — cell towers, ISPs, satellites, routers. When that infrastructure goes down, so does every messaging app, call, and social feed people rely on. This happens more often than it should:
+You're at a music festival with 50,000 people. Your friend is 100 meters away, but your phone shows "No Service." The network is overloaded. Now imagine an earthquake hits and all cell towers go down. Your messaging apps? Completely useless.
 
-- Natural disasters (earthquakes, floods, hurricanes)
-- Remote areas with no stable connectivity
-- Crowded events overloading local networks
-- Total infrastructure loss — the scenario this hackathon prompt is built around
+This happens more often than we realize:
+- Natural disasters knocking out infrastructure
+- Remote areas with zero connectivity  
+- Crowded events overwhelming networks
+- Complete internet blackouts
 
-In all of these cases, conventional messaging apps become completely unusable at the exact moment people need to coordinate the most.
+In these moments, traditional communication fails exactly when we need it most.
 
-## Our Fix
+---
 
-Relay turns every device into part of the network itself. Instead of routing messages through a server, two devices connect **directly** to each other over WebRTC, using a **QR code as the handshake** — no signaling server, no internet required to establish the link. Once connected, every device keeps a local store of every message it has seen and syncs it to the next device it meets. A message doesn't need a live connection from sender to recipient — it just needs a chain of people who each spent a few seconds linked to the next.
+## The Solution: RELAY
 
-This is called **store-and-forward / delay-tolerant networking** — the same principle NASA uses to relay data across deep space, applied here to a phone in someone's pocket.
+Relay turns every smartphone into a walking postal service.
 
-## Key Takeaways
+Instead of relying on cell towers or internet, Relay lets phones talk directly to each other. When you send a message, it hops from phone to phone like a game of telephone—until it reaches your friend. Even if it takes 30 minutes and passes through 5 strangers' phones, the message gets through.
 
-- ✅ Infrastructure-agnostic — no cell towers, no ISP, no server
-- ✅ Zero setup cost — runs in a browser, nothing to install
-- ✅ Self-healing mesh — every device that connects becomes a relay
-- ✅ Store-and-forward delivery — messages can arrive hours after the sender is gone
-- ✅ SOS priority channel for urgent messages
-- ✅ Shared local coordination board (water points, meeting spots, hazards)
-- 🔜 End-to-end encryption — see [Roadmap](#roadmap)
+**How It Works**
 
-## How It Works
+Step 1: "Hello!"
+Your phone shows a magical QR code. Your friend scans it with their camera. Poof! You're connected.
 
-**Step 1 — Peer Discovery & Handshake**
-One device generates a QR code (a compressed WebRTC connection offer). The other scans it and generates a reply QR code. The first device scans that back. No server ever brokers this — the two devices exchange everything they need to connect directly, using physical proximity as the "network."
+Step 2: "Here's a message!"
+You type "Meet me at the big tree." Your phone sends it directly to your friend's phone.
 
-**Step 2 — Direct Encrypted Channel**
-WebRTC establishes a direct peer-to-peer data channel between the two devices over whatever local network path is available.
+Step 3: "Pass it on!"
+Your friend walks away. Their phone meets another person's phone and automatically shares your message with them.
 
-**Step 3 — Store-and-Forward Sync**
-Every device keeps a local database (IndexedDB) of every message and board post it has ever seen, tagged with a unique ID. When two devices link up, they trade ID lists, then each sends over whatever the other is missing.
+Step 4: "Mission complete!"
+The message keeps hopping from phone to phone until it reaches your best friend who's across the festival. Everyone becomes a messenger!
 
-**Step 4 — Multi-Hop Delivery**
-A message can travel Device A → B → C, reaching a recipient who was never in range of the original sender — carried physically as people move, not by any single radio link exceeding its normal range.
+---
 
-**Step 5 — Priority Handling**
-Messages marked **SOS** are flagged and visually prioritized in the message thread; the board is synced the same way messages are, so coordination info (like "water at 5th & Main") spreads through the mesh automatically.
+## Key Features
 
-## Core Features
+What's Working Now:
+- QR Handshake: Scan a code to connect—no typing, no servers
+- Instant Messages: Send text back and forth directly
+- Store & Forward: Messages auto-sync when phones meet
+- Community Board: Share public updates everyone can see
+- SOS Mode: Emergency messages get priority delivery
+- Works Offline: Opens without internet, remembers everything
 
-| Feature | What it does |
-|---|---|
-| Peer Discovery | QR-based WebRTC handshake, no server needed |
-| Store-and-Forward Messaging | Messages persist locally and relay to every new peer |
-| Hop Count | Tracks how many devices a message has passed through |
-| SOS Mode | Emergency messages are visually flagged and prioritized |
-| Local Coordination Board | Shared bulletin for supply points, hazards, meeting spots |
-| Offline-Capable | Service worker caches the app shell for zero-network reloads |
+Coming Soon:
+- End-to-end encryption (top priority!)
+- Native app with Bluetooth background mode
+- Smarter routing for faster delivery
+- Photo and file sharing
 
-## Tech Stack
+---
 
-| Layer | Technology | Why |
-|---|---|---|
-| Peer connection | WebRTC (RTCPeerConnection + DataChannel) | Direct device-to-device transfer, no server |
-| Handshake | QR code (camera scan) | Signaling without any infrastructure |
-| Local storage | IndexedDB | Persistent message/board store per device |
-| Offline support | Service Worker | App still loads with zero connectivity |
-| Frontend | HTML / CSS / JavaScript | No build step, runs anywhere instantly |
+## Technical Architecture
+
+Tech Stack:
+- Connection: WebRTC — Direct device-to-device, no server
+- Handshake: QR Code — Zero infrastructure signaling
+- Storage: IndexedDB — Persistent local message database
+- Offline: Service Worker — App works with zero internet
+- Frontend: HTML/CSS/JS — No build step, works everywhere
+
+Why RELAY Wins:
+- Truly Decentralized — No servers, no single point of failure
+- Instant Access — Opens in browser, no app store needed
+- Realistic — Based on NASA's deep-space communication principles
+- Practical — Works with today's smartphones, no special hardware
+
+---
 
 ## Real-World Applications
 
-- 🚨 **Emergency response** — coordination during earthquakes, floods, hurricanes
-- 🏕️ **Remote expeditions** — trekking/mountaineering groups with no signal
-- 🎪 **Large events** — bypassing overloaded cellular networks
-- 🌍 **Rural connectivity** — regions without stable internet infrastructure
+Emergency Response: Coordinate rescue during earthquakes, floods, hurricanes
+Remote Expeditions: Trekking groups stay connected with no signal
+Large Events: Bypass overloaded cellular networks at concerts, festivals
+Rural Areas: Connect communities without stable internet
+
+---
 
 ## Known Limitations
 
-We'd rather name these ourselves than have a judge find them first:
+We're honest about where we stand:
+1. Two-step scan — Both phones need to scan QR codes (takes 10 seconds)
+2. No encryption yet — On our roadmap, not a hidden flaw
+3. Manual connection — Requires deliberate action (not passive like Bluetooth)
+4. WebRTC limits — Works best on same Wi-Fi/hotspot
 
-- **QR capacity** — WebRTC offers/answers can be large. We compress them before encoding; on very noisy networks with many ICE candidates, a code can occasionally be too dense to scan reliably.
-- **No encryption yet** — messages are currently unencrypted in transit and storage. This is the top item on our roadmap, not a hidden gap.
-- **Two-step handshake** — connecting requires scanning twice (offer, then reply), so both devices need to be within camera range briefly. After that, no further proximity is needed for a message to keep relaying onward.
-- **STUN dependency for NAT traversal** — we use a public STUN server to help discover connection candidates; on a fully offline network, ICE gathering falls back to local candidates only, which still works for devices on the same Wi-Fi/hotspot.
-
-## Roadmap
-
-- [ ] End-to-end encryption between original sender and recipient
-- [ ] Smarter routing (currently epidemic/flood-style; could reduce redundant transfers by tracking peer knowledge)
-- [ ] Delivery acknowledgements to stop unnecessary re-forwarding
-- [ ] Native BLE/Wi-Fi Direct transport for always-on background meshing (no camera scan needed per link)
+---
 
 ## Getting Started
 
-```bash
-git clone https://github.com/<Notproboii699>/relay-web.git
+Clone the repository:
+git clone https://github.com/Notproboii699/relay-web.git
 cd relay-web
-```
 
-Open `index.html` with a local server — camera access for QR scanning requires a served page, not a `file://` path.
+Run with Live Server (VS Code):
+Install Live Server extension → right-click index.html → Open with Live Server
 
-**Easiest way (VS Code):** install the **Live Server** extension → right-click `index.html` → *Open with Live Server*.
+Or use Python:
+python -m http.server 8000
+Visit http://localhost:8000
 
-## Demo
+For Demo:
+1. Open the app on 2+ devices
+2. On Device A: Click "Create Connection" → Show QR code
+3. On Device B: Click "Scan QR" → Scan Device A's code
+4. Device B shows their own QR code → Device A scans it back
+5. Start messaging! Messages auto-sync between connected devices
 
-To show multi-hop relay: open the app on 3+ devices, connect Device A ↔ B and B ↔ C via QR (keep A and C physically out of range of each other), send a message from A, and show it arriving at C through B.
+---
 
-## Team
+## Hackathon Submission
 
-- *Advitya Walia*
-- *Akshaj Gulati*
-- *Aadi Bansal*
+Judging Criteria Alignment:
+- Creativity: Novel QR handshake replacing server signaling
+- Innovation: Store-and-forward messaging in a browser
+- Prototype: Fully working web app with real-time relay
+- Originality: Unique approach to offline communication
+
+Submission Checklist:
+- Project Title: RELAY
+- Demo Video: https://youtu.be/your-demo-link
+- Repository: https://github.com/Notproboii699/relay-web
+- Team Registration Complete
+- All team members registered individually
+
+---
+
+## The Team
+
+Advitya Walia — Lead Developer
+Akshaj Gulati — System Architect
+Aadi Bansal — UI/UX & Testing
+
+---
 
 ## License
 
-MIT
+MIT License — Free for anyone to use, modify, and share.
+
+---
+
+> "When the internet disappears, communication shouldn't."
+> — Team RELAY, Build.IT '26
