@@ -1,10 +1,10 @@
-# Build.IT '26 Submission Package
+# Build.IT '26 Submission 
 
 ## Quick Reference
 
 Project Title: RELAY - Offline-First Mesh Messaging
 Track: Software Track - Prompt 1: First Contact
-Team Name: [STRAWHATS]
+Team Name: STRAWHATS
 Members: Advitya Walia, Akshaj Gulati, Aadi Bansal
 Submission Date: July 17, 2026
 
