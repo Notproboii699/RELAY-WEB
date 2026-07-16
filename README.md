@@ -7,9 +7,6 @@
 Built for **Build.IT Hackathon — Prompt 1: Software Track: First Contact**
 
 ![demo](docs/demo.gif)
-*(replace this with a real screen recording before submitting — see Step 6 below)*
-
----
 
 ## The Problem
 
@@ -116,7 +113,9 @@ To show multi-hop relay: open the app on 3+ devices, connect Device A ↔ B and 
 
 ## Team
 
-- *Add your names and roles here*
+- *Advitya Walia*
+- *Akshaj Gulati*
+- *Aadi Bansal*
 
 ## License
 
