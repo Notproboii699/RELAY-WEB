@@ -95,45 +95,6 @@ We're honest about where we stand:
 
 ---
 
-## Getting Started
-
-Clone the repository:
-git clone https://github.com/Notproboii699/relay-web.git
-cd relay-web
-
-Run with Live Server (VS Code):
-Install Live Server extension → right-click index.html → Open with Live Server
-
-Or use Python:
-python -m http.server 8000
-Visit http://localhost:8000
-
-For Demo:
-1. Open the app on 2+ devices
-2. On Device A: Click "Create Connection" → Show QR code
-3. On Device B: Click "Scan QR" → Scan Device A's code
-4. Device B shows their own QR code → Device A scans it back
-5. Start messaging! Messages auto-sync between connected devices
-
----
-
-## Hackathon Submission
-
-Judging Criteria Alignment:
-- Creativity: Novel QR handshake replacing server signaling
-- Innovation: Store-and-forward messaging in a browser
-- Prototype: Fully working web app with real-time relay
-- Originality: Unique approach to offline communication
-
-Submission Checklist:
-- Project Title: RELAY
-- Demo Video: https://youtu.be/your-demo-link
-- Repository: https://github.com/Notproboii699/relay-web
-- Team Registration Complete
-- All team members registered individually
-
----
-
 ## The Team
 
 Advitya Walia — Lead Developer
@@ -149,4 +110,4 @@ MIT License — Free for anyone to use, modify, and share.
 ---
 
 > "When the internet disappears, communication shouldn't."
-> — Team RELAY, Build.IT '26
+> — Team STRAWHATS, Build.IT '26
