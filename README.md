@@ -97,9 +97,9 @@ We're honest about where we stand:
 
 ## The Team
 
-Advitya Walia — Lead Developer
-Akshaj Gulati — System Architect
-Aadi Bansal — UI/UX & Testing
+- Advitya Walia — Lead Developer
+- Akshaj Gulati — System Architect
+- Aadi Bansal — UI/UX & Testing
 
 ---
 
