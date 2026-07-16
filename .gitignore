@@ -1,0 +1,101 @@
+# ========================================
+# RELAY - Git Ignore File
+# Build.IT '26 Hackathon
+# ========================================
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+
+# Editor/IDE Files
+.vscode/
+.idea/
+*.iml
+*.komodoproject
+.ropeproject/
+*.sublime-workspace
+*.sublime-project
+
+# Node.js / NPM / Yarn
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log*
+.pnpm-store/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build & Distribution
+/dist/
+/build/
+*.bundle.js
+*.bundle.js.map
+*.min.js
+*.min.css
+coverage/
+.nyc_output/
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+*.bak
+*.backup
+*.old
+*.orig
+
+# User Data / Privacy
+*.sqlite
+*.db
+*.db-journal
+local-storage-backup/
+/user_data/
+/private/
+*.key
+*.pem
+*.cert
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+*.env
+*.secret
+credentials.json
+config.local.json
+
+# Testing & Debug
+test-output/
+screenshots/
+*.test.js
+*.spec.js
+.nyc_output/
+
+# Hackathon Specific
+docs/demo.gif
+*.ai-generated
