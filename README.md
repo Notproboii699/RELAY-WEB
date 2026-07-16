@@ -99,7 +99,7 @@ We'd rather name these ourselves than have a judge find them first:
 ## Getting Started
 
 ```bash
-git clone https://github.com/<your-username>/relay-web.git
+git clone https://github.com/<Notproboii699>/relay-web.git
 cd relay-web
 ```
 
