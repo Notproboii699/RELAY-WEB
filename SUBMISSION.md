@@ -20,12 +20,12 @@ The core innovation: Replacing the signaling server with a QR code handshake, ma
 
 ## Project Structure
 relay/
-├── README.md           # Main project documentation
-├── DECISIONS.md        # Technical trade-off explanations
-├── SUBMISSION.md       # This file - submission details
-├── LICENSE             # MIT License
-├── .gitignore          # Git ignore rules
-└── index.html          # The web app (main entry point)
+-  README.md           # Main project documentation
+-   DECISIONS.md        # Technical trade-off explanations
+-   SUBMISSION.md       # This file - submission details
+-   LICENSE             # MIT License
+-   .gitignore          # Git ignore rules
+-   index.html          # The web app (main entry point)
 
 ---
 
